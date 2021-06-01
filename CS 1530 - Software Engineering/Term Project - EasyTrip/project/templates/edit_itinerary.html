@@ -1,0 +1,116 @@
+{% extends "base.html" %}
+
+{% block content %}
+<style>
+    #delete-button {
+        background-color: red;
+        margin-left: 5px;
+        color:white;
+    }
+    #delete-button:hover {
+        background-color: rgb(218, 17, 17);
+    }
+    #location-button {
+          background-color: #209cee;
+          margin-top: 20px;
+          color:white;
+    }
+    #location-button:hover {
+        background-color: #1496ED;
+    }
+</style>
+
+<div class="column is-three-fifths is-offset-one-fifth">
+    <!--List the itinerary ID-->
+    <div class="notification is-info is-size-3">
+        {% if itinerary.nickname == 'NULL' %}
+        <p>Itinerary {{itinerary.id}}</p>
+        {% else %}
+        <p>{{itinerary.nickname}}</p>
+        {% endif %}
+    </div>
+
+    <div class="box">
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        <div class="notification is-danger">
+            {{ messages[0] }}
+        </div>
+        {% endif %}
+        {% endwith %}
+        <!--List each place in the itinerary-->
+        {% if locations.count() > 0 %}
+            {% for location in locations %}
+            <div style="display: block;" class="itin_list_item">
+                {% if location.nickname == 'NULL' %}
+                <p style="display: inline;">{{ location.address + ", " + location.city + " " + location.state }} <b>{{ location.departure_time }}</b></p>
+                {% else %}
+                <p style="display: inline;">{{ location.nickname }} <b>{{ location.departure_time }}</b></p>
+                {% endif %}
+                    <form style="display: inline;" method="POST" action="{{ url_for('auth.delete_location', itin_id=itinerary.id, loc_id=location.id) }}">
+                    <button id="delete-button" class="button is-info is-small">Delete</button>
+                </form>
+            </div> 
+            </br>   
+            {% endfor %}
+            {% else %}
+            <div style="display: block;" class="itin_list_item">
+                <h2 class="is-5" style="display: inline;">No locations added!</h2>
+            </div>
+        {% endif %}
+        </br>
+        </br>
+        <a class="button is-4 is-info modal-button" data-target="#modal">Name Itinerary</a>
+        <div id="modal" class="modal">
+        <div class="modal-background"></div>
+        <div class="modal-content">
+            <div class="box">
+              
+                {% if itinerary.nickname == 'NULL' %}
+                    <h3 class="title is-5 has-text-black">Please enter a name for Itinerary {{itinerary.id}}</h3>
+                {% else %}
+                    <h3 class="title is-5 has-text-black">Please enter a new name for {{itinerary.nickname}}</h3>
+                {% endif %}
+                
+                <form method="POST" action="{{ url_for('auth.name_itinerary', itin_id=itinerary.id) }}">
+                <div class="field">
+                    <div class="control">
+                        <input class="input is-medium" type="name" name="name" placeholder="Itinerary Name" autofocus="">
+                    </div>
+                </div>
+                <button class="button is-block is-info is-medium is-fullwidth">Submit</button>
+                </form>
+            </div>
+        </div>
+        <button class="modal-close is-large" aria-label="close"></button>
+        </div>
+
+        <div style="display: block;">
+            <!--Button to add a new location-->
+            <form method="POST" action="{{ url_for('auth.add_location', itin_id=itinerary.id) }}">
+                <button id="location-button" class="button is-info is-4">Add Location</button>
+            </form>
+        </div>
+    </div>
+
+    <a class="button is-info is-medium" href="{{ url_for('auth.itinerary') }}">
+        <span class="icon">
+          <i class="fas fa-arrow-left"></i>
+        </span>
+        <span>Back to Itineraries</span>
+    </a>
+    <script>
+        $(".modal-button").click(function() {
+           var target = $(this).data("target");
+           $("html").addClass("is-clipped");
+           $(target).addClass("is-active");
+        });
+        
+        $(".modal-close").click(function() {
+           $("html").removeClass("is-clipped");
+           $(this).parent().removeClass("is-active");
+        });
+      </script>
+</div>
+
+{% endblock %}

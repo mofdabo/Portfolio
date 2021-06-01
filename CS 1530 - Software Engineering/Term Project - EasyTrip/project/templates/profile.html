@@ -1,0 +1,90 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1 class="title is-1">
+  Welcome, {{ name }}!
+</h1>
+
+<!--Check if there are itineraries, otherwise show empty-->
+<div class="container has-text-centered">
+  <figure class="image is-256x256">
+    <img src="https://images.unsplash.com/photo-1529074963764-98f45c47344b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1064&q=80">
+  </figure>
+  </br>
+  <div class="notification is-info is-size-2">
+    {% if itineraries %}
+      <h2 class="title is-3" style="display: inline;"> You have {{itineraries.__len__()}} itineraries!</h2>
+      </br>
+      {% for itinerary in itineraries %}
+        <!--List the itinerary ID-->
+        <div style="display: block;" class="itin_list_item">
+        {% if itinerary.nickname == 'NULL' %}
+          <h2 class="title is-4" style="display: inline;">Itinerary {{itinerary.id}}</h2>
+        {% else %}
+          <h2 class="title is-4" style="display: inline;">{{itinerary.nickname}}</h2>
+        {% endif %}
+        </div>
+      {% endfor %}            
+    {% else %}
+      <h3 class="title is-2">You have no itineraries yet!</h3>
+    {% endif %}
+  </div>
+</div>
+</br>
+<a class="button is-link is-large" href="{{ url_for('auth.itinerary') }}">
+  <span class="icon">
+    <i class="fas fa-arrow-right"></i>
+  </span>
+  <span>Head to Itineraries</span>
+</a>
+
+</br>
+</br>
+</br>
+
+<div class="column is-4 is-offset-4">
+  <a class="button is-4 is-info modal-button" data-target="#modal">Delete Account</a>
+  <div id="modal" class="modal">
+    <div class="modal-background"></div>
+    <div class="modal-content">
+      <div class="box">
+          {% with messages = get_flashed_messages() %}
+          {% if messages %}
+          <div class="notification is-danger">
+              {{ messages[0] }}
+          </div>
+          {% endif %}
+          {% endwith %}
+          
+          <h3 class="title is-5 has-text-black">Please enter your email and password</h3>
+          
+          <form method="POST" action="/delete">
+            <div class="field">
+              <div class="control">
+                  <input class="input is-medium" type="email" name="email" placeholder="Email" autofocus="">
+              </div>
+              <div class="control">
+                <input class="input is-medium" type="password" name="password" placeholder="Password" autofocus="">
+            </div>
+            </div>
+            <button class="button is-block is-info is-medium is-fullwidth">Delete</button>
+          </form>
+      </div>
+    </div>
+    <button class="modal-close is-large" aria-label="close"></button>
+  </div>
+</div>
+
+<script>
+  $(".modal-button").click(function() {
+     var target = $(this).data("target");
+     $("html").addClass("is-clipped");
+     $(target).addClass("is-active");
+  });
+  
+  $(".modal-close").click(function() {
+     $("html").removeClass("is-clipped");
+     $(this).parent().removeClass("is-active");
+  });
+</script>
+{% endblock %}

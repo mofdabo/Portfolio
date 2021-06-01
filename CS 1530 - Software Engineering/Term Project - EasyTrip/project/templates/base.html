@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Easy Trip</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
+    <script src = "https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <section class="hero is-link is-fullheight">
+
+        <div class="hero-head">
+            <nav class="navbar">
+                <div class="container">
+                    <div class="navbar-brand">
+                        <a href="{{ url_for('main.index') }}" class="navbar-item">
+                          EasyTrip
+                        </a>
+                        <span id="navbar-burger" class="navbar-burger" data-target="navbarMenuHeroA">
+                          <span></span>
+                          <span></span>
+                          <span></span>
+                        </span>
+                      </div>
+                    <div id="navbarMenuHeroA" class="navbar-menu">
+                        <div class="navbar-end">
+                            <a href="{{ url_for('main.index') }}" class="navbar-item">
+                                Home
+                            </a>
+                            {% if current_user.is_authenticated %}
+                            <a href="{{ url_for('main.profile', id=current_user.id, username=current_user.name)}}" class="navbar-item">
+                                Profile
+                            </a>
+                            {% endif %}
+                            {% if not current_user.is_authenticated %}
+                            <a href="{{ url_for('auth.login') }}" class="navbar-item">
+                                Login
+                            </a>
+                            <a href="{{ url_for('auth.signup') }}" class="navbar-item">
+                                Sign Up
+                            </a>
+                            {% endif %}
+                            {% if current_user.is_authenticated %}
+                            <a href="{{ url_for('auth.itinerary') }}" class="navbar-item">
+                                Itinerary
+                            </a>
+                            <a href="{{ url_for('auth.logout') }}" class="navbar-item">
+                                Logout
+                            </a>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+
+        <div class="hero-body">
+            <div class="container has-text-centered">
+               {% block content %}
+               {% endblock %}
+            </div>
+        </div>
+
+        <div class="hero-foot is-link">
+            <nav class="tabs is-boxed is-fullwidth">
+              <div class="container">
+                <ul>
+                  <li><a>Overview</a></li>
+                  <li><a>Features</a></li>
+                  <li><a>Support</a></li>
+              </div>
+            </nav>
+            </div>
+                <p class="subtitle has-text-centered is-6">&copy; 2021 EasyTrip. All right reserved.</p>
+            </div>
+        </div>
+    </section>
+</body>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        // Get all "navbar-burger" elements
+        const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+        // Check if there are any navbar burgers
+        if ($navbarBurgers.length > 0) {
+            // Add a click event on each of them
+            $navbarBurgers.forEach( el => {
+                el.addEventListener('click', () => {
+                    // Get the target from the "data-target" attribute
+                    const target = el.dataset.target;
+                    const $target = document.getElementById(target);
+                    // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
+                    el.classList.toggle('is-active');
+                    $target.classList.toggle('is-active');
+                });
+            });
+        }
+    });
+</script>
+
+</html>
