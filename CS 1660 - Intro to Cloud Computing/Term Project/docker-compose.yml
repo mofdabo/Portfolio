@@ -1,0 +1,122 @@
+version: "3.9"
+
+services:
+  # Toolbox
+  toolbox:
+    build: .
+    image: modabo/termproject
+    environment:
+      - DISPLAY=10.95.32.75:0.0
+    volumes: 
+      - /tmp/.X11-unix:/tmp/.X11-unix
+      - ~/.Xauthority:/root/.Xauthority
+      - .:/root/working
+    container_name: toolbox
+
+  # RStudio
+  rstudio:
+    image: rocker/rstudio
+    environment:
+      - DISABLE_AUTH=true
+    ports:
+      - 8787:8787
+    container_name: rstudio
+
+  # Spyder
+  spyder:
+    image: compdatasci/spyder-desktop
+    ports:
+      - 6080:6080
+    container_name: spyder
+
+  # Git
+  gitea:
+    image: gitea/gitea:1.12.4
+    environment: 
+      - DISABLE_REGISTRATION=true
+    volumes:
+      - ./data:/data
+    ports:
+      - "3000:3000"
+      - "22:22"
+    depends_on:
+      - db
+    restart: always
+    container_name: gitea
+  
+  db:
+    image: mariadb:10
+    restart: always
+    environment:
+      - MYSQL_ROOT_PASSWORD=mygit
+      - MYSQL_DATABASE=gitea
+      - MYSQL_USER=gitea
+      - MYSQL_PASSWORD=mygit
+    volumes:
+      - ./db/:/var/lib/mysql
+    container_name: db
+
+  # Jupyter Notebook
+  jupyter:
+    image: jupyter/minimal-notebook
+    environment:
+      - JUPYTER_TOKEN=easy
+    ports:
+      - 8889:8889
+    command: jupyter notebook --allow-root --ip='0.0.0.0' --port=8889 --no-browser --NotebookApp.token='' --NotebookApp.password=''
+    container_name: jupyter
+
+  # Orange
+  orange:
+    image: acopar/orange-docker
+    environment: 
+      - DISABLE_AUTH=true
+    ports:
+      - 5901:5901
+      - 6901:6901
+    tty: true
+    container_name: orange
+
+  #Visual Studio Code
+  vscode:
+    image: linuxserver/code-server
+    ports:
+      - 8443:8443
+    container_name: vscode
+
+  # Apache Hadoop
+
+
+  # Apache Spark
+  spark:
+    image: jupyter/all-spark-notebook
+    ports:
+      - "8080:8080"
+    command: jupyter notebook --allow-root --ip='0.0.0.0' --port=8080 --no-browser --NotebookApp.token='' --NotebookApp.password=''
+    container_name: spark
+  
+  # Tableau
+  tableau:
+    image: pvtmert/tableau
+    ports:
+      - 8316:8316
+    container_name: tableau
+
+  # SonarQube & SonarScanner (or SonarCloud)
+  
+
+  # Tensorflow
+  tensorflow:
+    image: tensorflow/tensorflow:latest-jupyter
+    ports:
+      - 8989:8888
+    environment:
+      - JUPYTER_TOKEN=password
+    container_name: tensorflow
+
+  # Markdown
+  markdown-server:
+    image: v4tech/markdown-editor
+    ports:
+      - 12345:80
+    container_name: markdown

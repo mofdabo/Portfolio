@@ -1,0 +1,27 @@
+Mouhammadou Dabo
+March 31, 2020
+CS 1632
+
+Deliverable 4
+
+Features:
+1. Run - this will run one iteration of the Game of Life
+	Slow reaction
+
+2. Run Continuous - This will run iterations until you press the Stop button.
+
+3. Stop - This will stop the current "Run Continuous" run. It will have no effect if the program is not running continuously already.
+
+4. Write - This will write the state of the system to a backup file, to be loaded later.
+
+5. Undo - This will undo the previous iteration. It will only work for one iteration (that is, you cannot do multiple undos to get back multiple iterations).
+
+6. Load - This will load a previously-saved backup file (created using the Write button) to the current world.
+
+7. Clear - This will clear the current world. 
+
+
+Methods 
+	MainPanel.calculateNextIteration()
+	MainPanel.iterateCell()
+	Cell.toString()

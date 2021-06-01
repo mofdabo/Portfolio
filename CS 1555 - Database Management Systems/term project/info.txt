@@ -1,0 +1,1182 @@
+Mouhammadou Dabo
+April 3, 2020
+CS 1555
+
+Project: Olympic Games
+
+Data
+
+Athens (2004)
+Beijing (2008)
+London (2012)
+Rio (2016)
+
+
+Tables
+
+USER_ACCOUNT
+user_id	username			passkey	role_id	last_login
+1	Carlos Arthur Nuzman	Rio	1
+2	Gianna Angelopoulos	Athens	1
+3	Hu Jintao			Beijing	1	
+4	Sebastian Coe		London	1
+
+5	USASwimM		USAS	2
+6	CROSwimM		CROS	2
+7	RSASwimM		RSAS	2
+8	SWESwimM		SWES	2
+9	AUSSwimM		AUSS	2
+10	UKRSwimM		UKRS	2
+11	DZASwimM		DZAS	2
+
+12	USATrackM		USAT	2	
+13	PRTTrackM		PRTT	2
+14	JAMTrackM		JAMT	2
+15	KNATrackM		KNAT	2
+16	BRBTrackM		BRBT	2
+
+17	BELTennisF		BELT	2
+18	FRATennisF		FRAT	2
+19	AUSTennisF		AUST	2
+20	RUSTennisF		RUST	2
+
+21	CHNDivingF		CHND	2
+22	RUSDivingF		RUSD	2
+23	AUSDivingF		AUSD	2
+
+24	JAMTrackF		JAMT	2
+25	RUSTrackF		RUST	2
+26	FRATrackF		FRAT	2
+
+27	NLDSwimM		NEDS	2
+
+28	BRASwimM		BRAS	2
+29	FRASwimM		FRAS	2
+
+30	TTOTrackM		TTOT	2
+31	NLDTrackM		NLDT	2
+
+32	CHNTennisF		CHNT	2
+	
+33	DEUDivingF		DEUD	2
+
+34	BELTrackF		BELT	2
+35	NGATrackF		NGAT	2
+36	BRATrackF		BRAT	2
+
+37	FRASwimM		FRAS	2
+
+38	TTOSwimM		TTOS	2
+
+39	USATennisF		USAT	2
+40	BLRTennisF		BLRT	2
+
+41	USADivingF		USAD	2
+42	CANDivingF		CAND	2
+
+43	USATrackF		USAT	2
+44	UKRTrackF		UKRT	2
+
+45	RUSSwimM		RUSS	2
+
+46	GBRSwimM		GBRS	2
+47	LTUSwimM		LTUS	2
+
+48	CANTrackM		CANT	2
+49	RSATrackM		RSAT	2
+50	CIVTrackM		CIVT	2
+51	FRATrackM		FRAT	2
+
+
+52	PURTennisF		PURT	2
+53	GERTennisF		GERT	2
+53	CZETennisF		CZET	2
+
+54	ITADivingF		ITAD	2
+
+55	GBRTrackF		GBRT	2
+
+56	AUSTrackM		AUST	2
+
+57	Guest			GUEST	3
+
+
+PARTICIPANT
+participant_id	fname		lname		nationality	birth_place		dob
+1		Gary		Hall		America		Cincinnati, Ohio		September 26, 1974
+2		Duje		Draganja		Croatia		Split, Croatia		February 27, 1983
+3		Roland		Schoeman		South Africa	Pretoria, South Africa	July 3, 1980
+4		Stefan		Nystrand		Sweden		Haninge, Sweden		October 20, 1981
+5		Jason		Lezak		America		Irvine, California		November 12, 1975
+6		Brett		Hawke		Australia		Sydney, New South Wales	June 2, 2975
+7		Oleksandr		Volynets		Ukraine		Ternopil, Ukraine		October 9, 1974	
+8		Salim 		Iles		Algeria		Oran, Algeria		May 14, 1975
+
+9		USA		SwimM		America		Cincinnati, Ohio		November 29, 1960
+10		CRO		SwimM		Croatia		Split, Croatia		September 6, 1966
+11		RSA		SwimM		South Africa	Pretoria, South Africa	July 7, 1965
+12		SWE		SwimM		Sweden		Haninge, Sweden		August 16, 1960
+13		AUS		SwimM		Australia		Irvine, California		September 15, 1974
+14		UKR		SwimM		Ukraine		Ternopil, Ukraine		September 8, 1965
+15		DZA		SwimM		Algeria		Oran, Algeria		Octover 18, 1969
+
+16		Justin		Gatlin		America		Brooklyn, New York		February 10, 1982
+17		Francis		Obikwelu		Portugal		Onitsha, Nigeria		November 22, 1978
+18		Maurice		Greene		America		Kansas City, Kansas		July 23, 1974
+19		Shawn		Crawford		America		Van Wyck, South Carolina	January 14, 1978
+20		Asafa		Powell		Jamaica		Spanish Town, Jamaica	November 23, 1982
+21		Kim		Collins		Saint Kitts and Nevis	Saint Peter Basseterre Parish	April 5, 1976
+22		Obadele		Thompson	Barbados		Barbados			March 30, 1976
+
+23		USA		TrackM		America		Brooklyn, New York		April 7, 1965	
+24		PRT		TrackM		Portugal		Lisbon, Portugal		November 29, 1955
+25		JAM		TrackM		Jamaica		Spanish Town, Jamaica	March 17, 1975
+26		KNA		TrackM		Saint Kitts and Nevis	Saint Peter Basseterre Parish	September 15, 1964
+27		BRB		TrackM		Barbados		Barbados			July 24, 1966
+
+28		Justine		Henin-Hardenne	Belgium		Liege, Belgium		June 1, 1982
+29		Amelie		Mauresmo	France		Geneva, Switzerland		July 5, 1979
+30		Alicia		Molik		Australia		Adelaide, South Australia	January 21, 1981
+31		Anastasia		Myskina		Russia		Moscow, Soviet Union	July 8, 1981
+
+32		BEL		TennisF		Belgium		Liege, Belgium		February 6, 1977
+33		FRA		TennisF		France		Paris, France		March 14, 1965 
+34		AUS		TennisF		Australia		Adelaide, South Australia	May 8, 1967
+35		RUS		TennisF		Russia		Moscow, Soviet Union	April 4, 1966
+
+36		Wu		Minxia		China		Shanghai, China		November 10, 1985
+37		Guo		Jingjing		China		Baoding, China		October 15, 1981
+38		Vera		Ilina		Russia		Soviet Union		February 20, 1974
+39		Ioulia 		Pakhalina		Russia		Penza, Soviet Union		September 12, 1977
+40		Irina 		Lashko		Australia		Samara, Soviet Union	January 25, 1973
+41		Chantelle 		Newbery		Australia		Melbourne, Australia	May 6, 1977
+
+42		CHN		DivingF		China		Shanghai, China		November 15, 1975
+43		RUS		DivingF		Russia		Penza, Soviet Union		September 29, 1967
+44		AUS		DivingF		Australia		Melbourne, Australia	May 25, 1967
+
+45		Tayna 		Lawrence		Jamaica		Spanish Town, Jamaica	September 17, 1975
+46		Sherone 		Simpson		Jamaica		Manchester Parish, Jamaica	August 12, 1984
+47		Aleen 		Bailey		Jamaica		Saint Mary, Jamaica		November 25, 1980
+48		Veronica		Campbell		Jamaica		Clarks Town, Jamaica	May 15, 1982
+49		Olga 		Fyodorova	Russia		Alapayevsk, Russia		July 14, 1983
+50		Yuliya		Tabakova		Russia		Russia			May 1, 2980
+51		Irina		Khabarova	Russia		Russia			March 18, 1966
+52		Larisa		Kruglova		Russia		Russia			October 27, 1972
+53		Veronique		Mang		France		Douala, Cameroon		December 15, 1884
+54		Muriel		Hurtis		France		Bondy, France		March 25, 1979
+55		Sylviane		Felix		France		Creteil, France		October 31, 1977
+56		Christine		Arron		France		Les Abymes, France		September 13, 1973
+
+57		JAM		TrackF		Jamaica		Spanish Town, Jamaica	March 17, 1975
+58		RUS		TrackF		Russia		Alapayevsk, Russia		July 14, 1973
+59		FRA		TrackF		France		Bondy, France		March 25, 1969
+
+60		Lyndon 		Ferns		South Africa	Polokwane. South Africa	September 24, 1983
+61		Darian		Townsend		South Africa	Pinetwon, South Africa	August 28, 1984
+62		Ryk		Neethling		South Africa	Bloemfontein		November 12, 1977
+63		Johan 		Kenkhuis		Netherlands	Vriezenveen, Netherlands	May 7, 1980	
+64		Mitja 		Zastrow		Netherlands	Germany			March 7, 1977
+65		Klaas-Erik		Zwering		Netherlands	Eindhoven, Netherlands	May 19, 1981
+66		Pieter		Hoogenband	Netherlands	Maastricht, Netherlands	March 14, 1978
+67		Ian		Crocker		United States	Portland, Maine		August 31, 1982
+68		Michael		Phelps		United States	Baltimore, Maryland		June 30, 1985
+69		Neil		Walker		United States	Verona, Wisconsin		June 25, 1976
+
+70		NLD		SwimM		Netherlands	Vriezenveen, Netherlands	May 7, 1960	
+
+71		Cesar		Cielo		Brazil		Santa Barbara d'Oeste, Brazil	January 10, 1987
+72		Amaury		Leveaux		France		Belfort, France		December 2, 1985
+73		Alain		Bernard		France		Aubagne, France		May 1, 1983
+74		Ashley		Callus		Australia		Brisbane, Queensland	March 10, 1979
+75		Ben		Wildman-Tobriner	United States	San Francisco, California	September 21, 1984	
+76		Eamon		Sullivan		Australia		Perth, Western Australia	August 30, 1985
+
+77		BRA		SwimM		Brazil		Santa Barbara d'Oeste, Brazil	January 10, 1977
+78		FRA		SwimM		France		Belfort, France		December 2, 1975
+
+79		Usain		Bolt		Jamaica		Sherwood Content, Jamaica	August 21, 1986
+80		Richard		Thompson	Trinidad and Tobago	Cascade, Trinidad & Tobago	June 7, 1985
+81		Walter 		Dix		United States	Coral Springs, Florida	January 31, 1986	
+82		Churandy		Martina		Netherlands	Willemstad, Netherlands	July 3, 1984
+83		Michael		Frater		Jamaica		Manchester, Jamaica		October 6, 1982
+84		Marc 		Burns		Trinidad and Tobago	Trinidad and Tobago		January 7, 1983
+85		Darvis		Patton		United States	Dallas, Texas		December 4, 1977
+	
+86		TTO		TrackM		Trinidad and Tobago	Cascade, Trinidad & Tobago	June 7, 1975
+87		NLD		TrackM		Netherlands	Willemstad, Netherlands	July 3, 1984
+
+88		Elena		Dementieva	Russia		Moscow, Soviet Union	August 25, 1981
+89		Dinara		Safina		Russia		Moscow, Soviet Union	April 27, 1986	
+90		Vera		Zvonareva	Russia		Moscow, Soviet Union	September 7, 1984
+91		Li		Na		China		Wuhan, Hubei		February 26, 1982
+
+92		CHN		TennisF		China		Wuhan, Hubei		February 26, 1972
+
+93		Julia		Pakhalina		Russia		Penza, Soviet Union		September 12, 1977
+94		Anastasia		Pozdnyakova	Russia		Elektrostal, Soviet Union	December 11, 1985
+95		Ditte		Kotzian		Germany		Germany			March 9, 1979
+96		Heike 		Fischer		Germany		Demmin, Germany		September 7, 1982
+
+97		DEU		DivingF		Germany		Demmin, Germany		September 7, 1972
+
+98		Olivia		Borlee		Belgium		Woluwe-Saint-Lambert	April 10, 1986
+99		Hanna 		Marien		Belgium		Herentals, Belgium		May 16, 1982
+100		Elodie		Ouedraogo	Belgium		Brussels, Belgium		February 27, 1981
+101		Kim		Gevaert		Belgium		Leuven, Belgium		August 5, 1978
+102		Franca		Idoko		Nigeria		Benue State, Nigeria		June 15, 1985
+103		Gloria		Kemasuode	Nigeria		Delta State, Nigeria		December 30, 1979
+104		Halimat		Ismaila		Nigeria		Ilorin, Kwara		July 3, 1984
+105		Oludamola	Osayomi		Nigeria		Osun State, Nigeria		June 26, 1986
+106		Rosemar 		Neto		Brazil		Miracatu, Brazil		January 2, 1977
+107		Lucimar		de Moura		Brazil		Timoteo, Brazil		March 22, 1974		
+108		Thaissa		Presti		Brazil		Sao Paulo, Brazil		November 7, 1985
+109		Rosangela		Santos		Brazil		Washington, DC		December 20, 1990
+
+110		BEL		TrackF		Belgium		Herentals, Belgium		May 16, 1972	
+111		NGA		TrackF		Nigeria		Ilorin, Kwara		July 3, 1974
+112		BRA		TrackF		Brazil		Sao Paulo, Brazil		November 7, 1975
+
+113		Garrett		Weber-Gale	United States	Stevens Point, Wisconsin	August 6, 1985
+114		Cullen		Jones		Untied States	New York City, New York	February 29, 1984	
+115		Fabien		Gilot		France		Denain, France		April 27, 1984
+116		Frederick		Bousquet		France		Perpignan, France		April 8, 1981
+117		Andrew 		Lauterstein	Australia		Melbourne, Victoria		May 22, 1987
+118		Matt		Targett		Australia		Chertsey, England		December 24, 1985
+
+119		FRA		SwimM		France		Denain, France		April 27, 1974
+
+120		Florent		Manaudou	France		Villeurbanne, France		November 12, 1990
+121		Bruno		Fratus		Brazil		Macae, Brazil		June 30, 1989
+122		Anthony		Ervin		United States	Valencia, California		May 26, 1981
+123		George 		Bovell		Trinidad and Tobago	Port of Spain		July 18, 1983
+
+124		TTO		SwimM		Trinidad and Tobago	Port of Spain		July 18, 19733
+
+125		Yohan		Blake		Jamaica		St. James, Jamaica		December 26, 1989
+126		Ryan 		Bailey		United States	Portland, Oregon		April 13, 1989
+127		Tyson		Gay		United States	Lexington, Kentucky		August 9, 1982
+
+128		Serena		Williams		United States	Palm Beach Gardens, Florida	September 26, 1981
+129		Maria		Sharapova	Russia		Nyagan, Soviet Union	April 19, 1987
+130		Victoria		Azarenka		Belarus		Minsk, Soviet Union		July 31, 1989
+131		Maria		Kirilenko		Russia		Moscow, Soviet Union	January 25, 1987
+
+132		USA		TennisF		United States	Palm Beach Gardens, Florida	September 26, 1971
+133		BLR		TennisF		Belarus		Minsk, Soviet Union		July 31, 1979
+
+134		He		Zi		China		Nanning, Guangxi		December 11, 1990
+135		Kelci		Bryant		United States	Springfield, Illinois		January 15, 1989
+136		Abigail 		Johnston		United States	Upper Arlington, Ohio	November 16, 1989
+137		Jennifer		Abel		Canada		Montreal, Quebec		August 23, 1991
+138		Emilie		Heymans		Canada		Brussels, Belgium		December 14, 1981
+	
+139		USA		DivingF		United States	Springfield, Illinois		January 15, 1979
+140		CAN		DivingF		Canada		Montreal, Quebec		August 23, 1981
+
+141		Tianna		Bartoletta		United States	Elyria, Ohio		August 30, 1985
+142		Allyson		Felix		United States	Los Angeles, California	November 18, 1985
+143		Bianca		Knight		United States	Pearl, Mississippi		January 2, 1989
+144		Carmelita		Jeter		United States	Los Angeles, California	November 24, 1979
+145		Shelly-Ann	Fraser-Pryce	Jamaica		Kingston, Jamaica		December 27, 1986
+146		Kerron		Stewart		Jamaica		Jamaica			April 16, 1984
+147		Olesya		Povh		Ukraine		Ukraine			October 18, 1987
+148		Hrystyna		Stuy		Ukraine		Ukraine			February 3, 1988
+149		Mariya		Ryemyen		Ukraine		Makiivka, Ukraine		August 2, 1987
+150		Elyzaveta		Bryzgina		Ukraine		Luhansk, Ukraine		November 28, 1989
+
+151		USA		TrackF		United States	Los Angeles, California	November 18, 1975
+152		UKR		TrackF		Ukraine		Makiivka, Ukraine		August 2, 1977
+	
+153		Clement		Lefert		France		Nice, France		September 26, 1987
+154		Yannick		Agnel		France		Nimes, France		June 9, 1992
+155		Nathan		Adrian		United States	Bremerton, Washinton	December 7, 1988	
+156		Ryan		Lochte		United States	Rochester, New York		August 3, 1984
+157		Andrey		Grechin		Russia		Barnaul, Soviet Union	October 21, 1987
+158		Nikita		Lobintsev		Russia		Sverdlovsk, Soviet Union	November 21, 1988
+159		Vladimir		Morozov		Russia		Novosibirsk Oblast, Russia	June 16, 1992
+160		Danila		Izotov		Russia		Novouralsk, Soviet Union	October 2, 1991	
+
+161		RUS		SwimM		Russia		Barnaul, Soviet Union	October 21, 1977
+
+162		Benjamin		Proud		Great Britain	London, England		September 21, 1994
+163		Andriy		Hovorov		Ukraine		Sevastopol, Ukraine		April 10, 1992
+164		Brad		Tandy		South Africa	South Africa		May 2, 1991
+165		Simonas		Bilis		Lithuania		Panevezys, Lithuania	November 11, 1993
+		
+166		GBR		SwimM		Great Britain	London, England		September 21, 1984
+167		LTU		SwimM		Lithuania		Panevezys, Lithuania	November 11, 1983
+	
+168		Andre		De Grasse		Canada		Jacksonville, Florida		November 10, 1994
+169		Akani		Simbine		South Africa	Pretoria, South Africa	September 21, 1993
+170		Ben		Meite		Ivory Coast	Seguela, Ivory Coast		November 11, 1986
+171		Jimmy		Vicaut		France		Bondy, France		February 27, 1992
+172		Trayvon 		Bromell		United States	St. Petersburg, Florida	July 10, 1995
+
+173		CAN		TrackM		Canada		Montreal, Quebec		August 23, 1971
+174		RSA		TrackM		South Africa	Pretoria, South Africa	September 21, 1983
+175		CIV		TrackM		Ivory Coast	Seguela, Ivory Coast		November 11, 1976
+176		FRA		TrackM		France		Bondy, France		February 27, 1982
+
+177		Monica		Puig		Puerto Rico	San Juan, Puerto Rico	September 27, 1993
+178		Angelique		Kerber		Germany		Bremen, West Germany	January 18, 1988
+179		Petra 		Kvitova		Czech Republic	Bilovec, Czechoslovakia	March 8, 1990	
+180		Madison		Keys		United States	Rock Island, Illinois		February 17, 1995
+
+181		PUR		TennisF		Puerto Rico	San Juan, Puerto Rico	September 27, 1983
+182		GER		TennisF		Germany		Bremen, West Germany	January 18, 1978
+183		CZE		TennisF		Czech Republic	Bilovec, Czechoslovakia	March 8, 1980
+
+184		Shi		Tingmao		China		Chongqing, China		August 31, 1991
+185		Tania		Cagnotto		Italy		Bolzano, Italy		May 15, 1985
+186		Francesca		Dallape		Italy		Trento, Italy		June 24, 1986
+187		Maddison 		Keeney		Australia		Auckland, New Zealand	May 23, 1996
+188		Anabelle		Smith		Australia		Malvern, Victoria		February 3, 1993
+
+189		ITA		DivingF		Italy		Bolzano, Italy		May 15, 1975
+		
+190		English		Gardner		United States	Philadelphia, Pennsylvania	April 22, 1992
+191		Tori		Bowie		United States	Sand Hill, Mississippi	August 27, 1990
+192		Christania		Williams		Jamaica		Saint Ann Parish, Jamaica	October 17, 1994
+193		Elaine		Thompson	Jamaica		Manchester, Jamaica		June 28, 1992
+194		Asha 		Philip		Great Britain	Leyton, London		October 25, 1990
+195		Desiree 		Henry		Great Britain	United Kingdom		August 26, 1995
+196		Dina		Asher-Smith	Great Britain	Orpington, Greater London	December 4, 1995
+197		Daryll		Neita		Great Britain	London, England		August 29, 1996
+	
+198		GBR		TrackF		Great Britain	London, England		August 29, 1986
+
+199		Caeleb		Dressel		United States	Green Cove Springs, Florida	August 16, 1996
+200		Ryan 		Held		United States	Springfield, Illinois		June 27, 1995
+201		Mehdy		Metella		France		Cayenne, French Guiana	July 17, 1992
+202		Jeremy		Stravius		France		Abbeville, France		July 14, 1988
+203		James		Roberts		Australia		Tweed Heads, New South Wale	April 11, 1991
+204		Kyle		Chambers		Australia		Port Lincoln, South Australia	June 25, 1998
+205		James 		Magnussen	Australia		Port Macquarie		April 11, 1991
+206		Cameron		McEvoy		Australia		Gold Coast, Queensland	May 13, 1994
+
+207		AUS		SwimM		Australia		Port Lincoln, South Australia	June 25, 1988
+
+
+COUNTRY
+country_id	country			country_code
+1		United States		USA
+2		Australia			AUS
+3		Japan			JPN
+4		Netherlands		NLD
+5		Ukraine			UKR
+6		France			FRA
+7		Poland			POL
+8		South Africa		RSA
+9		Croatia			CRO
+10		Sweden			SWE
+11		Algeria			DZA
+12		Portugal			PRT
+13		Jamaica			JAM
+14		Saint Kitts and Nevis		KNA
+15		Barbados			BRB
+16		Belgium			BEL
+17		Russia			RUS
+18		China			CHN	
+19		Brazil			BRA
+20		Trinidad and Tobago		TTO
+21		Germany			DEU
+22		Nigeria			NGA
+23		Belarus			BLR
+24		Canada			CAN
+25		Great Britain		GBR
+26		Lithuania			LTU
+27		Ivory Coast		CIV
+28		Puerto Rico		PUR
+29		Czech Republic		CZE
+30		Italy			ITA
+
+
+TEAM
+team_id		olympic_id	team_name	country_id	sport_id	coach_id
+1		1		USASwimM	1		1	9
+2		1		CROSwimM	9		1	10	
+3		1		RSASwimM	8		1	11
+4		1		SWESwimM	10		1	12
+5		1		AUSSwimM	2		1	13
+6		1		UKRSwimM	5		1	14
+7		1		DZASwimM	11		1	15
+
+8		1		USATrackM	1		2	23	
+9		1		PRTTrackM	12		2	24
+10		1		JAMTrackM	13		2	25
+11		1		KNATrackM	14		2	26
+12		1		BRBTrackM	15		2	27
+
+13		1		BELTennisF	16		3	32
+14		1		FRATennisF	6		3	33
+15		1		AUSTennisF	2		3	34
+16		1		RUSTennisF	17		3	35
+
+17		1		CHNDivingF	18		4	42
+18		1		RUSDivingF	17		4	43
+19		1		AUSDivingF	2		4	44
+
+20		1		JAMTrackF	13		5	57
+21		1		RUSTrackF	17		5	58
+22		1		FRATrackF	6		5	59
+
+23		1		RSASwimM	8		6	11
+24		1		NLDSwimM	4		6	70
+25		1		USASwimM	1		6	9
+
+26		2		BRASwimM	19		1	77
+27		2		FRASwimM	6		1	78
+28		2		AUSSwimM	2		1	13
+29		2		USASwimM	1		1	9
+30		2		RSASwimM	8		1	8
+31		2		SWESwimM	10		1	10
+
+32		2		JAMTrackM	13		2	25	
+33		2		TTOTrackM	20		2	86
+34		2		USATrackM	1		2	23
+35		2		NLDTrackM	4		2	87
+
+36		2		RUSTennisF	17		3	35	
+37		2		CHNTennisF	18		3	92
+
+38		2		CHNDivingF	18		4	42		
+39		2		RUSDivingF	17		4	43
+40		2		DEUDivingF	21		4	97
+
+41		2		BELTrackF	16		5	110
+42		2		NGATrackF	22		5	111
+43		2		BRATrackF	19		5	112
+
+44		2		USASwimM	1		6	9
+45		2		FRASwimM	6		6	119
+46		2		AUSSwimM	2		6	13
+
+47		3		FRASwimM	6		1	78
+48		3		USASwimM	1		1	9
+49		3		BRASwimM	19		1	77
+50		3		RSASwimM	8		1	11
+51		3		TTOSwimM	20		1	124
+52		3		AUSSwimM	2		1	13
+
+53		3		JAMTrackM	13		2	25
+54		3		USATrackM	1		2	23
+55		3		NLDTrackM	4		2	87
+56		3		TTOTrackM	20		2	86
+
+57		3		USATennisF	1		3	132	
+58		3		RUSTennisF	17		3	35
+59		3		BLRTennisF	23		3	133
+
+60		3		CHNDivingF	18		4	42
+61		3		USADivingF	1		4	139
+62		3		CANDivingF	24		4	140
+
+63		3		USATrackF	1		5	151
+64		3		JAMTrackF	13		5	57
+65		3		UKRTrackF	5		5	152
+
+66		3		FRASwimM	6		6	119
+67		3		USASwimM	1		6	9
+68		3		RUSSwimM	17		6	161
+
+69		4		USASwimM	1		1	9
+70		4		FRASwimM	6		1	119
+71		4		GBRSwimM	25		1	166
+72		4		UKRSwimM	5		1	14
+73		4		BRASwimM	19		1	77
+74		4		RSASwimM	8		1	11
+75		4		LTUSwimM	26		1	167
+
+76		4		JAMTrackM	13		2	25
+77		4		USATrackM	1		2	23
+78		4		CANTrackM	24		2	173
+79		4		RSATrackM	8		2	174
+80		4		CIVTrackM	27		2	175
+81		4		FRATrackM	6		2	176
+
+82		4		PURTennisF	28		3	181
+83		4		GERTennisF	21		3	182
+84		4		CZETennisF	29		3	183
+85		4		USATennisF	1		3	132
+
+86		4		CHNDivingF	18		4	42
+87		4		ITADivingF	30		4	189
+88		4		AUSDivingF	2		4	44
+
+89		4		USATrackF	1		5	151
+90		4		JAMTrackF	13		5	57
+91		4		GBRTrackF	25		5	198
+
+92		4		USASwimM	1		6	9
+93		4		FRASwimM	6		6	119
+94		4		AUSSwimM	2		6	207
+
+
+TEAM_MEMBER
+team_id		participant_id
+1		1
+2		2
+3		3
+4		4
+1		5		
+5		6
+6		7
+7		8
+
+8		16
+9		17
+8		18
+8		19
+10		20
+11		21
+12		22
+
+13		28
+14		29
+15		30
+16		31
+
+17		36
+17		37
+18		38
+18		39
+19		40
+19		41
+
+20		45
+20		46
+20		47
+20		48
+21		49
+21		50
+21		51
+21		52
+22		53
+22		54
+22		55
+22		56
+
+23		3
+23		60
+23		61
+23		62
+24		63
+24		64
+24		65
+24		66
+25		67
+25		68
+25		69
+25		5
+
+26		71
+27		72
+27		73
+28		74
+29		75
+28		76
+30		3
+31		4
+
+32		79
+33		80
+34		81
+35		82
+32		20
+32		83
+33		84
+34		85
+
+36		88	
+36		89
+36		90
+37		91
+
+38		37
+38		36
+39		93
+39		94
+40		95
+40		96
+
+41		98
+41		99
+41		100
+41		101
+42		102
+42		103
+42		104
+42		105
+43		106
+43		107
+43		108
+43		109
+
+44		68
+44		113
+44		114
+44		5
+45		72
+45		115
+45		116
+45		73
+46		76
+46		117
+46		74
+46		118
+
+47		120
+48		114
+49		71
+49		121
+48		122
+50		3
+51		123
+52		76
+
+53		79
+53		125
+54		16
+54		126
+55		82
+56		80
+53		20
+54		127
+
+57		128
+58		129
+59		130
+58		131
+
+60		134
+60		36
+61		135
+61		136
+62		137
+62		138
+
+63		141
+63		142
+63		143
+63		144
+64		145
+64		46
+64		48
+64		146
+65		147
+65		148
+65		149
+65		150
+
+66		72
+66		115
+66		153
+66		154
+67		155
+67		68
+67		114
+67		156
+68		157
+68		158
+68		159
+68		160
+
+69		122
+70		120
+69		155
+71		162
+72		163
+73		121
+74		164
+75		165
+
+76		79
+77		16
+78		168
+76		125
+79		169
+80		170
+81		171
+77		172
+
+82		177
+83		178
+84		179
+85		180
+
+86		184
+86		36
+87		185
+87		186
+88		187
+88		188
+
+89		141
+89		142
+89		190
+89		191
+90		192
+90		193
+90		48
+90		145
+91		194
+91		195
+91		196
+91		197
+
+92		199
+92		68
+92		200
+92		155
+93		201
+93		115
+93		120
+93		202
+94		203
+94		204
+94		205
+94		206
+
+
+SCOREBOARD
+olympic_id	event_id		team_id		participant_id	position		medal_id
+1		1		1		1		1		1		
+1		1		2		2		2		2
+1		1		3		3		3		3
+1		1		4		4		4	
+1		1		1		5		5
+1		1		5		6		6
+1		1		6		7		7
+1		1		7		8		8
+
+1		2		8		16		1		1
+1		2		9		17		2		2
+1		2		8		18		3		3
+1		2		8		19		4
+1		2		10		20		5
+1		2		11		21		6
+1		2		12		22		7
+
+1		3		13		28		1		1
+1		3		14		29		2		2
+1		3		15		30		3		3
+1		3		16		31
+
+1		4		17		36		1		1
+1		4		17		37		1		1
+1		4		18		38		2		2
+1		4		18		39		2		2
+1		4		19		40		3		3
+1		4		19		41		3		3
+
+1		5		20		45		1		1
+1		5		20		46		1		1
+1		5		20		47		1		1
+1		5		20		48		1		1
+1		5		21		49		2		2
+1		5		21		50		2		2
+1		5		21		51		2		2
+1		5		21		52		2		2
+1		5		22		53		3		3
+1		5		22		54		3		3
+1		5		22		55		3		3
+1		5		22		56		3		3
+
+1		6		23		3		1		1
+1		6		23		60		1		1
+1		6		23		61		1		1
+1		6		23		62		1		1
+1		6		24		63		2		2
+1		6		24		64		2		2
+1		6		24		65		2		2
+1		6		24		66		2		2
+1		6		25		67		3		3
+1		6		25		68		3		3
+1		6		25		69		3		3
+1		6		25		5		3		3
+
+2		7		26		71		1		1
+2		7		27		72		2		2
+2		7		27		73		3		3
+2		7		28		74		4
+2		7		29		75		5
+2		7		28		76		6
+2		7		30		3		7
+2		7		31		4		8
+	
+2		8		32		79		1		1
+2		8		33		80		2		2
+2		8		34		81		3		3
+2		8		35		82		4
+2		8		32		20		5
+2		8		32		83		6
+2		8		33		84		7
+2		8		34		85		8
+
+2		9		36		88		1		1
+2		9		36		89		2		2
+2		9		36		90		3		3
+2		9		37		91
+
+2		10		38		37		1		1
+2		10		38		36		1		1
+2		10		39		93		2		2
+2		10		39		94		2		2
+2		10		40		95		3		3
+2		10		40		96		3		3
+
+2		11		41		98		1		1
+2		11		41		99		1		1
+2		11		41		100		1		1
+2		11		41		101		1		1
+2		11		42		102		2		2
+2		11		42		103		2		2
+2		11		42		104		2		2
+2		11		42		105		2		2
+2		11		43		106		3		3
+2		11		43		107		3		3
+2		11		43		108		3		3
+2		11		43		109		3		3
+
+
+2		12		44		68		1		1
+2		12		44		113		1		1
+2		12		44		114		1		1
+2		12		44		5		1		1
+2		12		45		72		2		2
+2		12		45		115		2		2
+2		12		45		116		2		2
+2		12		45		73		2		2
+2		12		46		76		3		3
+2		12		46		117		3		3
+2		12		46		74		3		3
+2		12		46		118		3		3
+
+3		13		47		120		1		1
+3		13		48		114		2		2
+3		13		49		71		3		3
+3		13		49		121		4
+3		13		48		122		5
+3		13		50		3		6
+3		13		51		123		7
+3		13		52		76		8
+
+3		14		53		79		1		1		
+3		14		53		125		2		2
+3		14		54		16		3		3
+3		14		54		126		4
+3		14		55		82		5
+3		14		56		80		6
+3		14		53		20		7
+3		14		54		127		
+
+3		15		57		128		1		1
+3		15		58		129		2		2
+3		15		59		130		3		3
+3		15		58		131		4
+
+3		16		60		134		1		1
+3		16		60		36		1		1
+3		16		61		135		2		2
+3		16		61		136		2		2
+3		16		62		137		3		3
+3		16		62		138		3		3
+
+3		17		63		141		1		1
+3		17		63		142		1		1
+3		17		63		143		1		1
+3		17		63		144		1		1
+3		17		64		145		2		2
+3		17		64		46		2		2
+3		17		64		48		2		2
+3		17		64		146		2		2
+3		17		65		147		3		3
+3		17		65		148		3		3
+3		17		65		149		3		3
+3		17		65		150		3		3
+
+3		18		66		72		1		1
+3		18		66		115		1		1
+3		18		66		153		1		1
+3		18		66		154		1		1
+3		18		67		155		2		2
+3		18		67		68		2		2
+3		18		67		114		2		2
+3		18		67		156		2		2
+3		18		68		157		3		3
+3		18		68		158		3		3
+3		18		68		159		3		3
+3		18		68		160		3		3
+
+4		19		69		122		1		1
+4		19		70		120		2		2
+4		19		69		155		3		3
+4		19		71		162		4
+4		19		72		163		5
+4		19		73		121		6
+4		19		74		164		7
+4		19		75		165		8
+
+4		20		76		79		1		1
+4		20		77		16		2		2
+4		20		78		168		3		3
+4		20		76		125		4
+4		20		79		169		5
+4		20		80		170		6	
+4		20		81		171		7
+4		20		77		172		8
+
+4		21		82		177		1		1
+4		21		83		178		2		2
+4		21		84		179		3		3
+4		21		85		180		4
+
+4		22		86		184		1		1
+4		22		86		36		1		1
+4		22		87		185		2		2
+4		22		87		186		2		2
+4		22		88		187		3		3
+4		22		88		188		3		3
+
+4		23		89		141		1		1
+4		23		89		142		1		1
+4		23		89		190		1		1
+4		23		89		191		1		1
+4		23		90		192		2		2
+4		23		90		193		2		2
+4		23		90		48		2		2
+4		23		90		145		2		2
+4		23		91		194		3		3
+4		23		91		195		3		3
+4		23		91		196		3		3
+4		23		91		197		3		3
+
+4		24		92		199		1		1	
+4		24		92		68		1		1
+4		24		92		200		1		1
+4		24		92		155		1		1
+4		24		93		201		2		2
+4		24		93		115		2		2
+4		24		93		120		2		2
+4		24		93		202		2		2
+4		24		94		203		3		3
+4		24		94		204		3		3
+4		24		94		205		3		3
+4		24		94		206		3		3
+
+
+VENUE
+venue_id		olympic_id	venue_name				capacity
+1		1		Olympic Aquatic Centre			3
+2		1		Athens Olympic Stadium			8
+3		1		Athens Olympic Tennis Centre			2
+
+4		2		Beijing National Aquatics Centre		3
+5		2		Beijing National Stadium			8
+6		2		Olympic Green Tennis Centre			2
+
+7		3		London Aquatics Centre			3
+8		3		Olympic Stadium				8
+9		3		All England Lawn Tennis and Croquet Club	2
+
+10		4		Olympic Aquatics Stadium			3
+11		4		Olympic Stadium				8
+12		4		Olympic Tennis Centre			2
+
+
+EVENT
+event_id		sport_id		venue_id		gender		event_time
+1		1		1		m		August 20, 2004	
+2		2		2		m		August 22, 2004	23:10
+3		3		3		f		
+4		4		1		f		August 16, 2004
+5		5		2		f
+6		6		1		m		August 15, 2004
+
+7		1		4		m
+8		2		5		m
+9		3		6		f
+10		4		4		f
+11		5		5		f
+12		6		4		m
+
+13		1		7		m
+14		2		8		m
+15		3		9		f
+16		4		7		f
+17		5		8		f
+18		6		7		m
+
+19		1		10		m
+20		2		11		m
+21		3		12		f
+22		4		10		f
+23		5		11		f
+24		6		10		m
+
+
+
+EVENT_PARTICIPATION
+event_id		team_id		status
+1		1		e
+1		2		e
+1		3		e
+1		4		e
+1		5		e
+1		6		e
+1		7		e
+
+2		8		e
+2		9		e
+2		10		e
+2		11		e
+2		12		e
+
+3		13		e
+3		14		e
+3		15		e
+3		16		e
+
+4		17		e
+4		18		e
+4		19		e
+
+5		20		e
+5		21		e
+5		22		e
+
+6		23		e
+6		24		e
+6		25		e
+
+7		26		e
+7		27		e
+7		28		e
+7		29		e
+7		30		e
+7		31		e
+
+8		32		e
+8		33		e		
+8		34		e
+8		35		e
+
+9		36		e
+9		37		e
+
+10		38		e
+10		39		e
+10		40		e
+
+11		41		e
+11		42		e
+11		43		e
+
+12		44		e
+12		45		e
+12		46		e
+
+13		47		e
+13		48		e
+13		49		e
+13		50		e
+13		51		e
+13		52		e
+
+14		53		e
+14		54		e
+14		55		e
+14		56		e
+
+15		57		e
+15		58		e
+15		59		e
+
+16		60		e
+16		61		e
+16		62		e
+
+17		63		e
+17		64		e
+17		65		e
+
+18		66		e
+18		67		e
+18		68		e
+
+19		69		e
+19		70		e
+19		71		e
+19		72		e
+19		73		e
+19		74		e
+19		75		e
+
+20		76		e
+20		77		e
+20		78		e
+20		79		e
+20		80		e
+20		81		e
+
+21		82		e
+21		83		e
+21		84		e
+21		85		e
+
+22		86		e
+22		87		e
+22		88		e
+
+23		89		e
+23		90		e
+23		91		e
+
+24		92		e
+24		93		e
+24		94		e
+
+
+FINISHED TABLES
+
+MEDAL
+medal_id		medal_title	points
+1		Gold		5
+2		Silver		3
+3		Bronze		1
+
+
+USER_ROLE
+role_id	role_name
+1	Organizer
+2	Coach
+3	Guest
+
+
+OLYMPICS
+olympic_id     olympic_num	host_city		opening_date	closing date	official_website
+1	      XXVIII		Athens		August 13, 2004	August 29, 2004  	https://www.olympic.org/athens-2004
+2	      XXIX		Beijing		August 8, 2008	August 24, 2008	https://www.olympic.org/beijing-2008
+3	      XXX		London		July 27, 2012	August 12, 2012	https://www.olympic.org/london-2012
+4 	      XXXI		Rio de Janeiro	August 5, 2016	August 21, 2016	https://www.olympic.org/rio-2016
+	
+
+SPORT
+sport_id	sport_name		description												dob		team_size
+1	50-m freestyle		a swimming competition in which competittors are subject to few limited restrictions on their swimming stroke and swim;		1896		1
+2	100-m dash		a sprint race in track and field competitions for both male (since 1896) and female (since 1964)					1896		1
+3	tennis singles	 	a tennis competition that involves two players competing against each other, usually two men or two women			1896		1
+4	synchronized 3m springboard	 a sport in which two divers dive at the same time as a team from a three-meter springboard or a ten-meter platform		2000		2
+	
+5	4x100m relay		 an athletics track event run in lanes over one lap of the track with four runners completing 100 metres each			1912		4	
+6	4x100 freestyle relay	 a relay event in which each of four swimmers on a team swims a 100-metre freestyle leg in sequence				1912		4
+
+
+
+
+
+
+
+
+
